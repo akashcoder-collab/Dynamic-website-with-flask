@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        #banner{
+            height: 360px;
+            width: 100%;
+            object-fit: cover;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-2 mb-4">Open Cosmos</h1>
+        <img class="img-fluid" id="banner" src="{{ url_for('static', filename='job.jpg') }}" height="320">
+        <h2 class="text-center mt-2 mb-4">About Open Cosmos</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend bibendum augue, at eleifend velit vestibulum ac. Donec at neque vitae nulla volutpat posuere. Proin id mauris leo. Vestibulum hendrerit nisi ac tincidunt porttitor. Praesent quis turpis in ipsum sagittis ultrices eu id velit. Praesent finibus sit amet mauris in tincidunt. Vestibulum dignissim quis nisl a iaculis. Morbi auctor neque a sapien interdum, luctus iaculis dui vulputate.</p>
+        <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+        <div>
+            {% for job in jobs %}
+                {% include 'jobitem.html'  %}
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg mt-2 mb-4">Contact Us</button>
+        </div>
+    </div>
+</body>
+</html>
