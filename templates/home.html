@@ -16,11 +16,21 @@
     
 </head>
 <body>
+    {% include 'nav.html' %}
     <div class="container">
-        <h1 class="text-center mt-2 mb-4">Open Cosmos</h1>
+        
         <img class="img-fluid" id="banner" src="{{ url_for('static', filename='job.jpg') }}" height="320">
-        <h2 class="text-center mt-2 mb-4">About Open Cosmos</h2>
+        <h2 class="text-center mt-2 mb-4" style="margin-top: 16px;">About Open Cosmos</h2>
+        <div class="row" style="margin-bottom: 16px;">
+            <div class="col-md-6">
         <p class="lead">Open Cosmos is a technology-driven company focused on innovation in artificial intelligence, data science, and modern software development. We build scalable digital solutions that help businesses automate processes, analyze data efficiently, and create impactful user experiences. Our team values creativity, collaboration, and continuous learning to solve real-world challenges through technology.</p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img  
+             src="{{ url_for('static', filename='people.jpg') }}" height="320"
+        style="border-radius: 4px; box-shadow: 1px;">
+        </div>
+        </div>
         <h2 class="text-center mt-2 mb-4">Job openings</h2>
         <div>
             {% for job in jobs %}
@@ -31,5 +41,6 @@
             <button class="btn btn-primary btn-lg mt-2 mb-4">Contact Us</button>
         </div>
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
